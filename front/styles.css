@@ -1,0 +1,53 @@
+body {
+    margin: auto;
+    background-color: #cff1ef;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+
+    margin: auto;
+    width: 50%;
+    height: 70px;
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    background: #E6E8E6;
+
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+}
+
+.logo-box {
+    flex: 5;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.logo-box img {
+    height: 70%;
+    margin-left: 20px;
+
+}
+
+.options-box {
+    flex: 2;
+    height: 100%;
+}
+
+.icon-box {
+	height: 100%;
+	margin-top: 10px;
+}
+
+.icon-box img {
+	display: inline;
+	height: 70%;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin-left: 10px;
+}
