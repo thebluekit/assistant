@@ -28,13 +28,16 @@
      width: 50%;
      max-width: 700px;
 
-     height: 100%;
+     height: -moz-calc(100% - 50px);
+     height: -webkit-calc(100% - 50px);
+     height: -o-calc(100% - 50px);
+     height: calc(100% - 50px);
      background: #FFFFFF;
  }
 
  .bottom-container {
-     /*    display: flex;
-    flex-direction: row;*/
+     display: flex;
+     flex-direction: row;
 
      position: fixed;
      bottom: 0;
@@ -104,14 +107,41 @@
      margin-left: 10px;
  }
 
+ .input-box {
+     /*     display: inline;*/
+     width: 60%;
+     /*     border: 1px solid red;*/
+     height: 100%;
+     flex: 3;
+ }
 
- input {
+ .input-box input {
      border: 0;
      outline: 0;
      background: transparent;
      font-size: 30px;
-     width: 100%;
+     width: 90%;
      margin-top: 20px;
      margin-left: 20px;
-     /*  border-bottom: 1px solid black;*/
+     /*     border: 1px solid black;*/
+ }
+
+ .send-box {
+     /*     display: inline;*/
+     flex: 1;
+     margin-right: 20px;
+     width: 40px;
+     /*     border: 1px solid black;*/
+ }
+
+ .send-box {
+     height: 100%;
+     margin-top: 10px;
+ }
+
+ .send-box img {
+     display: inline;
+     height: 70%;
+     background-color: #FFFFFF;
+     margin-left: 10px;
  }
