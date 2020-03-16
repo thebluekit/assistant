@@ -147,20 +147,23 @@
 
  .bot-message {
      width: 100%;
-     height: auto;
-/*     border: 1px solid red;*/
- }
-
- .bot-message p {
-
-     width: 100%;
-     height: auto;
-
-     float: left;
+     min-height: 50px;
 
      margin-top: 10px;
      margin-left: 10px;
      margin-bottom: 5px;
+
+     border: 1px solid red;
+ }
+
+ .bot-message p {
+
+     /*     width: 100%;*/
+     height: auto;
+
+     /*     float: left;*/
+
+
 
      padding: 10px;
      max-width: 50%;
@@ -175,15 +178,21 @@
  }
 
  .user-message {
-     float: right;
- }
+     width: 100%;
+     min-height: 50px;
 
- .user-message p {
-     float: right;
 
      margin-top: 10px;
      margin-right: 10px;
      margin-bottom: 5px;
+
+     border: 1px solid green;
+
+     /*     float: right;*/
+ }
+
+ .user-message p {
+     float: right;
 
      padding: 10px;
      max-width: 70%;
