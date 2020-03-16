@@ -9,6 +9,8 @@ body {
 
     margin: auto;
     width: 50%;
+    max-width: 700px;
+
     height: 70px;
 
     border-bottom-left-radius: 30px;
@@ -19,8 +21,16 @@ body {
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 1000px) {
+    .top-container {
+        width: 95%;
+        height: 100px;
+        max-width: none;
+    }
+}
+
 .logo-box {
-    flex: 5;
+    flex: 1;
     height: 100%;
 
     display: flex;
@@ -35,18 +45,19 @@ body {
 }
 
 .options-box {
-    flex: 2;
+    flex: 1;
     height: 100%;
+    margin-right: 20px;
 }
 
 .icon-box {
-	height: 100%;
-	margin-top: 10px;
+    height: 100%;
+    margin-top: 10px;
 }
 
 .icon-box img {
-	display: inline;
-	height: 70%;
+    display: inline;
+    height: 70%;
     border-radius: 50%;
     background-color: #FFFFFF;
     margin-left: 10px;
