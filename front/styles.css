@@ -6,7 +6,7 @@
  body {
      height: 100%;
      margin: auto;
-     background-color: #cff1ef;
+     background-color: #272727;
  }
 
  .top-container {
@@ -20,7 +20,7 @@
      height: 50px;
 
 
-     background: #FFFFFF;
+     background: #F3EFF5;
  }
 
  .main-container {
@@ -32,7 +32,7 @@
      height: -webkit-calc(100% - 50px);
      height: -o-calc(100% - 50px);
      height: calc(100% - 50px);
-     background: #FFFFFF;
+     background: #F3EFF5;
  }
 
  .bottom-container {
@@ -48,7 +48,7 @@
      max-width: 700px;
 
      height: 70px;
-     background: #FFFFFF;
+     background: #F3EFF5;
 
      border-top: 1px solid grey;
 
@@ -142,6 +142,6 @@
  .send-box img {
      display: inline;
      height: 70%;
-     background-color: #FFFFFF;
+     background-color: #F3EFF5;
      margin-left: 10px;
  }
