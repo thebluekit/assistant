@@ -28,10 +28,10 @@
      width: 50%;
      max-width: 700px;
 
-     height: -moz-calc(100% - 50px);
-     height: -webkit-calc(100% - 50px);
-     height: -o-calc(100% - 50px);
-     height: calc(100% - 50px);
+     height: -moz-calc(100% - 40px);
+     height: -webkit-calc(100% - 40px);
+     height: -o-calc(100% - 40px);
+     height: calc(100% - 40px);
      background: #F3EFF5;
  }
 
@@ -108,9 +108,7 @@
  }
 
  .input-box {
-     /*     display: inline;*/
      width: 60%;
-     /*     border: 1px solid red;*/
      height: 100%;
      flex: 3;
  }
@@ -121,17 +119,14 @@
      background: transparent;
      font-size: 30px;
      width: 90%;
-     margin-top: 20px;
+     margin-top: 15px;
      margin-left: 20px;
-     /*     border: 1px solid black;*/
  }
 
  .send-box {
-     /*     display: inline;*/
      flex: 1;
      margin-right: 20px;
      width: 40px;
-     /*     border: 1px solid black;*/
  }
 
  .send-box {
@@ -144,4 +139,61 @@
      height: 70%;
      background-color: #F3EFF5;
      margin-left: 10px;
+ }
+
+ .message-box {
+     /*     border: 1px solid red;*/
+ }
+
+ .bot-message {
+     width: 100%;
+     height: auto;
+/*     border: 1px solid red;*/
+ }
+
+ .bot-message p {
+
+     width: 100%;
+     height: auto;
+
+     float: left;
+
+     margin-top: 10px;
+     margin-left: 10px;
+     margin-bottom: 5px;
+
+     padding: 10px;
+     max-width: 50%;
+
+     background-color: #D6D6D6;
+
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-right-radius: 20px;
+
+     font-size: 20px;
+ }
+
+ .user-message {
+     float: right;
+ }
+
+ .user-message p {
+     float: right;
+
+     margin-top: 10px;
+     margin-right: 10px;
+     margin-bottom: 5px;
+
+     padding: 10px;
+     max-width: 70%;
+
+     color: #FFFFFF;
+     background-color: #7098FF;
+
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 20px;
+
+     font-size: 20px;
  }
