@@ -6,24 +6,29 @@
  body {
      height: 100%;
      margin: auto;
-     background-color: #272727;
+
+     background: #7F7FD5;
+     background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+     background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
  }
 
- .top-container {
-     display: flex;
-     flex-direction: row;
+ ::placeholder {
+     color: #CBCBCB;
+     opacity: 1;
+ }
 
-     margin: auto;
-     width: 50%;
-     max-width: 700px;
+ :-ms-input-placeholder {
+     color: #CBCBCB;
+ }
 
-     height: 50px;
-
-
-     background: #F3EFF5;
+ ::-ms-input-placeholder {
+     color: #CBCBCB;
  }
 
  .main-container {
+     position: relative;
+     background-color: rgba(0, 0, 0, 0.4) !important;
+
      margin: auto;
      width: 50%;
      max-width: 700px;
@@ -35,23 +40,32 @@
      background: #F3EFF5;
 
      overflow-y: auto;
+
+     border-radius: 20px;
+     margin-top: 10px;
+ }
+
+ .top-container {
+     display: flex;
+     flex-direction: row;
+
+     margin: auto;
+     max-width: 700px;
+
+     height: 50px;
  }
 
  .bottom-container {
      display: flex;
      flex-direction: row;
-
-     position: fixed;
-     bottom: 0;
-     left: 50%;
-     transform: translate(-50%, 0);
-
+     position: absolute;
      width: 50%;
+     bottom: 10px;
+
+     width: 100%;
      max-width: 700px;
 
      height: 70px;
-     background: #F3EFF5;
-
      border-top: 1px solid grey;
 
  }
@@ -139,7 +153,6 @@
  .send-box img {
      display: inline;
      height: 70%;
-     background-color: #F3EFF5;
      margin-left: 10px;
  }
 
