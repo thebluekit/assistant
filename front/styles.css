@@ -1,11 +1,11 @@
  html {
-     height: 100%;
-     margin: 0px;
+     height: 98%;
  }
 
  body {
      height: 100%;
      margin: auto;
+     margin-top: 1%;
 
      background: #7F7FD5;
      background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
@@ -33,16 +33,18 @@
      width: 50%;
      max-width: 700px;
 
-     height: -moz-calc(100% - 40px);
-     height: -webkit-calc(100% - 40px);
-     height: -o-calc(100% - 40px);
-     height: calc(100% - 40px);
+     /*     height: -moz-calc(100%);
+     height: -webkit-calc(100%);
+     height: -o-calc(100%);
+     height: calc(100%);*/
+
+     height: 98%;
+
      background: #F3EFF5;
 
-     overflow-y: auto;
+     /*     overflow-y: auto;*/
 
      border-radius: 20px;
-     margin-top: 10px;
  }
 
  .top-container {
@@ -86,6 +88,24 @@
      .main-container {
          width: 100%;
          max-width: none;
+         border-radius: 0px;
+
+         height: 100%;
+     }
+
+     body {
+         margin-top: 0%;
+     }
+
+     html {
+         height: 100%;
+     }
+
+     .messages {
+         height: -moz-calc(100% - 210px) !important;
+         height: -webkit-calc(100% - 210px) !important;
+         height: -o-calc(100% - 210px) !important;
+         height: calc(100% - 210px) !important;
      }
  }
 
@@ -118,8 +138,6 @@
  .icon-box img {
      display: inline;
      height: 70%;
-     border-radius: 50%;
-     background-color: #FFFFFF;
      margin-left: 10px;
  }
 
@@ -208,4 +226,15 @@
      font-size: 20px;
 
      font-size: 20px;
+ }
+
+ .messages {
+
+     height: -moz-calc(100% - 130px);
+     height: -webkit-calc(100% - 130px);
+     height: -o-calc(100% - 130px);
+     height: calc(100% - 130px);
+
+     overflow-y: auto;
+/*     border: 1px solid red;*/
  }
