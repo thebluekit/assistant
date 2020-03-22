@@ -9,7 +9,7 @@
   }
 
   html {
-      height: 98%;
+      height: 100%;
   }
 
   body {
@@ -19,9 +19,9 @@
       margin: auto;
       margin-top: 1%;
 
-      background: #7F7FD5;
-      background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-      background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+      background: #9bf7f7;
+      background: -webkit-linear-gradient(to bottom right, #9bf7f7 0%, #a67be6 100%);
+      background: linear-gradient(to bottom right, #9bf7f7 0%, #a67be6 100%);
   }
 
   ::placeholder {
@@ -47,7 +47,7 @@
       margin: auto;
       width: 50%;
       max-width: 700px;
-      height: 98%;
+      height: 96%;
 
       background: #F3EFF5;
       border-radius: 20px;
@@ -198,8 +198,8 @@
   .bot-message {
       max-width: 60%;
 
-      background: #00a6e8;
-      color: white;
+      background: #ade7e9;
+      color: black;
       left: 10px;
       width: 80%;
       float: left;
@@ -225,8 +225,8 @@
       float: right;
       padding: 5px;
 
-      color: #FFFFFF;
-      background-color: #7098FF;
+      color: black;
+      background-color: #c2bfee;
 
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
