@@ -115,7 +115,16 @@
       }
 
       .input-box input {
-          margin-top: 35px !important;
+          margin-top: 25px !important;
+          font-size: 45px !important;
+      }
+
+      .user-message p {
+          font-size: 40px !important;
+      }
+
+      .bot-message p {
+          font-size: 40px !important;
       }
   }
 
@@ -198,7 +207,7 @@
   .bot-message {
       max-width: 60%;
 
-      background: #ade7e9;
+      background: #aadbf1;
       color: black;
       left: 10px;
       width: 80%;
@@ -226,7 +235,7 @@
       padding: 5px;
 
       color: black;
-      background-color: #c2bfee;
+      background-color: #bdb7ec;
 
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
