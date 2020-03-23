@@ -1,263 +1,267 @@
 @font-face {
-      font-family: 'Proxima Nova Light';
-      src: url('fonts/ProximaNova/ProximaNova-Light.eot');
-      src: url('fonts/ProximaNova/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
-          url('fonts/ProximaNova/ProximaNova-Light.woff') format('woff'),
-          url('fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-  }
+    font-family: 'Proxima Nova Light';
+    src: url('fonts/ProximaNova/ProximaNova-Light.eot');
+    src: url('fonts/ProximaNova/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ProximaNova/ProximaNova-Light.woff') format('woff'),
+        url('fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-  html {
-      height: 100%;
-  }
+html {
+    height: 100%;
+}
 
-  body {
-      font-family: Proxima Nova Light;
+body {
+    font-family: Proxima Nova Light;
 
-      height: 98%;
-      margin: auto;
-      margin-top: 1%;
+    height: 98%;
+    margin: auto;
+    margin-top: 1%;
 
-      background: #9bf7f7;
-      background: -webkit-linear-gradient(to bottom right, #9bf7f7 0%, #a67be6 100%);
-      background: linear-gradient(to bottom right, #9bf7f7 0%, #a67be6 100%);
-  }
+    background: #9bf7f7;
+    background: -webkit-linear-gradient(to bottom right, #9bf7f7 0%, #a67be6 100%);
+    background: linear-gradient(to bottom right, #9bf7f7 0%, #a67be6 100%);
+}
 
-  ::placeholder {
-      font-family: Proxima Nova Light;
-      color: #CBCBCB;
-      opacity: 1;
-  }
+::placeholder {
+    font-family: Proxima Nova Light;
+    color: #CBCBCB;
+    opacity: 1;
+}
 
-  :-ms-input-placeholder {
-      font-family: Proxima Nova Light;
-      color: #CBCBCB;
-  }
+:-ms-input-placeholder {
+    font-family: Proxima Nova Light;
+    color: #CBCBCB;
+}
 
-  ::-ms-input-placeholder {
-      font-family: Proxima Nova Light;
-      color: #CBCBCB;
-  }
+::-ms-input-placeholder {
+    font-family: Proxima Nova Light;
+    color: #CBCBCB;
+}
 
-  .main-container {
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.4) !important;
+.main-container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4) !important;
 
-      margin: auto;
-      width: 50%;
-      max-width: 700px;
-      height: 98%;
+    margin: auto;
+    width: 50%;
+    max-width: 700px;
+    height: 98%;
 
-      background: #F3EFF5;
-      border-radius: 20px;
-  }
+    background: #F3EFF5;
+    border-radius: 20px;
+}
 
-  .top-container {
-      display: flex;
-      flex-direction: row;
+.top-container {
+    display: flex;
+    flex-direction: row;
 
-      margin: auto;
-      max-width: 700px;
+    margin: auto;
+    max-width: 700px;
 
-      height: 50px;
-  }
+    height: 50px;
+}
 
-  .bottom-container {
-      display: flex;
-      flex-direction: row;
-      position: absolute;
-      width: 50%;
-      bottom: 10px;
+.bottom-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 50%;
+    bottom: 10px;
 
-      width: 100%;
-      max-width: 700px;
+    width: 100%;
+    max-width: 700px;
 
-      height: 70px;
-      border-top: 1px solid grey;
+    height: 70px;
+    border-top: 1px solid grey;
 
-  }
+}
 
-  @media (max-width: 1000px) {
-      .top-container {
-          width: 100%;
-          height: 100px;
-          max-width: none;
-      }
+@media (max-width: 1000px) {
+    .top-container {
+        width: 100%;
+        height: 100px;
+        max-width: none;
+    }
 
-      .bottom-container {
-          width: 100%;
-          height: 100px;
-          max-width: none;
-      }
+    .bottom-container {
+        width: 100%;
+        height: 100px;
+        max-width: none;
+    }
 
-      .main-container {
-          width: 100%;
-          max-width: none;
-          border-radius: 0px;
+    .main-container {
+        width: 100%;
+        max-width: none;
+        border-radius: 0px;
 
-          height: 100%;
-      }
+        height: 100%;
+    }
 
-      body {
-          margin-top: 0%;
-          height: 100%;
-      }
+    body {
+        margin-top: 0%;
+        height: 100%;
+    }
 
-      html {
-          height: 100%;
-      }
+    html {
+        height: 100%;
+    }
 
-      .messages {
-          height: -moz-calc(100% - 210px) !important;
-          height: -webkit-calc(100% - 210px) !important;
-          height: -o-calc(100% - 210px) !important;
-          height: calc(100% - 210px) !important;
-      }
+    .messages {
+        height: -moz-calc(100% - 210px) !important;
+        height: -webkit-calc(100% - 210px) !important;
+        height: -o-calc(100% - 210px) !important;
+        height: calc(100% - 210px) !important;
+    }
 
-      .input-box input {
-          margin-top: 25px !important;
-          font-size: 45px !important;
-      }
+    .input-box input {
+        margin-top: 25px !important;
+        font-size: 45px !important;
+    }
 
-      .user-message p {
-          font-size: 40px !important;
-      }
+    .user-message p {
+        font-size: 40px !important;
+    }
 
-      .bot-message p {
-          font-size: 40px !important;
-      }
-  }
+    .bot-message p {
+        font-size: 40px !important;
+    }
+}
 
-  .logo-box {
-      flex: 1;
-      height: 100%;
+.logo-box {
+    flex: 1;
+    height: 100%;
 
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
 
-  }
+}
 
-  .logo-box img {
-      height: 70%;
-      margin-left: 20px;
+.logo-box img {
+    height: 70%;
+    margin-left: 20px;
 
-  }
+}
 
-  .options-box {
-      flex: 1;
-      height: 100%;
-      margin-right: 20px;
-  }
+.options-box {
+    flex: 1;
+    height: 100%;
+    margin-right: 20px;
+}
 
-  .icon-box {
-      height: 100%;
-      margin-top: 10px;
-  }
+.icon-box {
+    height: 100%;
+    margin-top: 10px;
+}
 
-  .icon-box img {
-      display: inline;
-      height: 70%;
-      margin-left: 10px;
-  }
+.icon-box img {
+    display: inline;
+    height: 70%;
+    margin-left: 10px;
+}
 
-  .input-box {
-      width: 60%;
-      height: 100%;
-      flex: 3;
-  }
+.input-box {
+    width: 60%;
+    height: 100%;
+    flex: 3;
+}
 
-  .input-box input {
-      border: 0;
-      outline: 0;
-      background: transparent;
-      font-size: 30px;
-      width: 90%;
-      margin-top: 20px;
-      margin-left: 20px;
-      color: white;
-      font-family: Proxima Nova Light;
-  }
+.input-box input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 30px;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    font-family: Proxima Nova Light;
+}
 
-  .send-box {
-      flex: 1;
-      margin-right: 20px;
-      width: 40px;
-  }
+.send-box {
+    flex: 1;
+    margin-right: 20px;
+    width: 40px;
 
-  .send-box {
-      height: 100%;
-      margin-top: 10px;
-  }
+    height: 100%;
+    margin-top: 10px;
+}
 
-  .send-box img {
-      display: inline;
-      height: 70%;
-      margin-left: 10px;
-  }
+.send-box input {
+    display: inline;
+    height: 70%;
+    margin-left: 10px;
+}
 
-  .message-box {
-      overflow: hidden;
-      margin-bottom: 5px;
-      border-radius: 5px;
-      padding: 5px;
+input[type="image"],
+textarea,
+select {
+    outline: none;
+}
 
-      margin-left: 10px;
-      margin-right: 10px;
+.message-box {
+    overflow: hidden;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px;
 
-  }
+    margin-left: 10px;
+    margin-right: 10px;
 
-  .bot-message {
-      max-width: 60%;
+}
 
-      background: #aadbf1;
-      color: black;
-      left: 10px;
-      width: 80%;
-      float: left;
-      padding: 5px;
+.bot-message {
+    max-width: 60%;
+
+    background: #aadbf1;
+    color: black;
+    left: 10px;
+    width: 80%;
+    float: left;
+    padding: 5px;
 
 
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-  }
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 
-  .bot-message p {
-      margin: auto;
-      padding: 7px;
+.bot-message p {
+    margin: auto;
+    padding: 7px;
 
-      font-size: 20px;
-  }
+    font-size: 20px;
+}
 
-  .user-message {
-      max-width: 60%;
-      right: 10px;
-      width: 80%;
-      float: right;
-      padding: 5px;
+.user-message {
+    max-width: 60%;
+    right: 10px;
+    width: 80%;
+    float: right;
+    padding: 5px;
 
-      color: black;
-      background-color: #bdb7ec;
+    color: black;
+    background-color: #bdb7ec;
 
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      border-bottom-left-radius: 20px;
-  }
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
 
-  .user-message p {
-      margin: auto;
-      padding: 7px;
+.user-message p {
+    margin: auto;
+    padding: 7px;
 
-      font-size: 20px;
-  }
+    font-size: 20px;
+}
 
-  .messages {
+.messages {
 
-      height: -moz-calc(100% - 130px);
-      height: -webkit-calc(100% - 130px);
-      height: -o-calc(100% - 130px);
-      height: calc(100% - 130px);
+    height: -moz-calc(100% - 130px);
+    height: -webkit-calc(100% - 130px);
+    height: -o-calc(100% - 130px);
+    height: calc(100% - 130px);
 
-      overflow-y: auto;
-  }
+    overflow-y: auto;
+}
