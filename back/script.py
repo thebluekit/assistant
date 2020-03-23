@@ -1,4 +1,6 @@
 from flask import Flask, request
+import config
+
 
 app = Flask(__name__)
 
@@ -11,4 +13,4 @@ def data_update():
     return bot_message
 
 
-app.run(debug=True, host='', port=5000)
+app.run(debug=True, host=config.HOST_IP, port=config.PORT)
