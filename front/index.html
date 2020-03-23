@@ -20,31 +20,21 @@
         <div class="messages" id="messages_field">
             <div class="message-box">
                 <div class="bot-message">
-                    <p>Привет, меня зовут Вилсон. Чем могу помочь?</p>
+                    <p></p>
                 </div>
             </div>
             <div class="message-box">
                 <div class="user-message">
-                    <p>Какая сейчас погода?</p>
-                </div>
-            </div>
-            <div class="message-box">
-                <div class="bot-message">
-                    <p>На улице -3°, внезапно выпал снег, оденься потеплее.</p>
-                </div>
-            </div>
-            <div class="message-box">
-                <div class="user-message" id="1">
-                    <p>Спасибо</p>
+                    <p></p>
                 </div>
             </div>
         </div>
         <footer class="bottom-container">
             <div class="input-box">
-                <input placeholder="Сообщение..." onkeydown="search(this)" id="message-field">
+                <input placeholder="Сообщение..." onkeydown="send_message(this)" id="message-field">
             </div>
             <div class="send-box" align="right">
-                <input type="image" src="img/icons/sent.png" onclick="search(this)"/>
+                <input type="image" src="img/icons/sent.png" onclick="send_message(this)"/>
             </div>
         </footer>
     </div>

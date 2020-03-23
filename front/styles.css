@@ -209,6 +209,8 @@ select {
     margin-left: 10px;
     margin-right: 10px;
 
+    visibility: hidden;
+
 }
 
 .bot-message {
@@ -217,7 +219,6 @@ select {
     background: #aadbf1;
     color: black;
     left: 10px;
-    width: 80%;
     float: left;
     padding: 5px;
 
@@ -235,9 +236,13 @@ select {
 }
 
 .user-message {
+
+    word-wrap: break-word;
+
     max-width: 60%;
+    max-height: 100000px;
     right: 10px;
-    width: 80%;
+    /*    width: 80%;*/
     float: right;
     padding: 5px;
 

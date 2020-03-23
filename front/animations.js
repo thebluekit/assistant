@@ -1,28 +1,41 @@
-function search(element) {
+let messages = document.getElementsByClassName("message-box");
+let message_field = document.getElementById('messages_field');
+
+let blanked_bot_message = messages[0].cloneNode(true);
+let blanked_user_message = messages[1].cloneNode(true);
+
+message_field.innerHTML = "";
+
+blanked_bot_message.style.visibility = "visible";
+blanked_user_message.style.visibility = "visible";
+
+function send_message(element) {
     let message_field = document.getElementById('message-field');
     if ((event.key === 'Enter') || (element.type == 'image')) {
-        p(message_field.value);
-        console.log(message_field.value);
+        show_user_message(message_field.value);
+
         message_field.value = "";
     }
 }
-function p(m) {
 
-    let message_field = document.getElementById('messages_field')
+function show_user_message(message) {
+    let tmp_blanked_user_message = blanked_user_message.cloneNode(true);
+    let text = tmp_blanked_user_message.getElementsByTagName('p')[0]
+    text.innerHTML = message;
 
-    let message_box = document.createElement('div');
-    message_box.className = 'message-box';
+    message_field.appendChild(tmp_blanked_user_message);
 
-    let user_message = document.createElement('div');
-    user_message.className = 'user-message';
+    let elem = document.getElementById('messages_field');
+    elem.scrollTop = elem.scrollHeight;
+}
 
-    let text = document.createElement('p');
-    text.innerHTML = m;
+function show_bot_message(message) {
+    let tmp_blanked_bot_message = blanked_bot_message.cloneNode(true);
+    let text = tmp_blanked_bot_message.getElementsByTagName('p')[0]
+    text.innerHTML = message;
 
-    user_message.appendChild(text);
-    message_box.appendChild(user_message);
-    message_field.appendChild(message_box);
+    message_field.appendChild(tmp_blanked_bot_message);
 
-    var elem = document.getElementById('messages_field');
+    let elem = document.getElementById('messages_field');
     elem.scrollTop = elem.scrollHeight;
 }
