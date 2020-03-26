@@ -1,6 +1,7 @@
 from flask import Flask, request
+import flask
 import config
-
+import os
 
 def distance(a, b):
     n, m = len(a), len(b)
@@ -29,6 +30,13 @@ if __name__ == '__main__':
 	    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
 	    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
 	    return response
+
+	@app.route('/')
+	def index():
+	    """ Displays the index page accessible at '/'
+	    """
+	    return flask.render_template("index.html")
+
 
 	@app.route('/getMessage', methods=['GET'])
 	def get_message():
