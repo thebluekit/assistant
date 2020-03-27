@@ -1,7 +1,7 @@
-from flask import Flask, request
-import flask
-import config
+from flask import Flask, request, render_template
+from dotenv import load_dotenv
 import os
+
 
 def distance(a, b):
     n, m = len(a), len(b)
@@ -21,6 +21,10 @@ def distance(a, b):
     return current_row[n]
 
 if __name__ == '__main__':
+	load_dotenv()
+	HOST_IP = os.getenv("HOST_IP")
+	PORT = os.getenv("PORT")
+
 	app = Flask(__name__)
 
 	@app.after_request
@@ -35,7 +39,7 @@ if __name__ == '__main__':
 	def index():
 	    """ Displays the index page accessible at '/'
 	    """
-	    return flask.render_template("index.html")
+	    return render_template("index.html")
 
 
 	@app.route('/getMessage', methods=['GET'])
@@ -47,4 +51,4 @@ if __name__ == '__main__':
 	    return bot_message
 
 
-	app.run(debug=True, host=config.HOST_IP, port=config.PORT)
+	app.run(debug=True, host=HOST_IP, port=PORT)
