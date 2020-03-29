@@ -1,5 +1,5 @@
-import datetime
 from message import Messages
+import commands
 
 
 class Assistant:
@@ -18,4 +18,5 @@ class Assistant:
 
     @staticmethod
     def execute_cmd(cmd):
-        return cmd
+        executed_message = getattr(commands, cmd)()
+        return executed_message

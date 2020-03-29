@@ -6,7 +6,7 @@ import re
 
 class Messages:
     RECOGNIZED_PERCENT = 2/3
-    WORD_THRESHOLD = 90
+    WORD_THRESHOLD = 80
 
     def __init__(self, package_path):
         self.opts = {}
@@ -46,6 +46,6 @@ class Messages:
                 rc = deepcopy(rc_tmp)
 
         if rc["recognized_words"] / len(words_li) < self.RECOGNIZED_PERCENT:
-            rc = {'cmd': 'Error', "recognized_words": 0}
+            rc = {'cmd': 'error', "recognized_words": 0}
         return rc['cmd']
 
