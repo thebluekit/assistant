@@ -10,7 +10,7 @@ PORT = 5000
 # Address and password for DataBase (use Neo4j)  
 Default link for localhost: http://localhost:7474/db/data/
 DB_LINK = ""
-DB_PASSWORD = "123"
+DB_PASSWORD = ""
 ```
 
 ## Files structure
