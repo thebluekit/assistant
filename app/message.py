@@ -6,14 +6,25 @@ from py2neo import Graph
 import re
 import os
 
+# load and setting up dot env values
 load_dotenv()
 DB_LINK = os.getenv("DB_LINK")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
+# connect to Neo4j DB
 graph = Graph(DB_LINK, password=DB_PASSWORD)
+
+# TODO: abstract method of cypher commands
 
 
 def get_key_words(cmd):
+    """
+    get key words of commands
+    :param cmd: command, which key words you need to get
+    :type cmd: str
+    :return: list of key words
+    :rtype: list
+    """
     command = "Command"
     word = "word"
     query_template = Template("MATCH (:$command {name: '$cmd'})-[r:$word]-(res) RETURN res")
@@ -29,6 +40,11 @@ def get_key_words(cmd):
 
 
 def get_commands():
+    """
+    get all commands of bot
+    :return: list of commands
+    :rtype: list
+    """
     command = "Command"
     query_template = Template("MATCH (n:$command) RETURN n")
     query = query_template.substitute(command=command)
@@ -41,6 +57,11 @@ def get_commands():
 
 
 def get_alias():
+    """
+    get all alias of bot
+    :return: list of alias
+    :rtype: list
+    """
     alias = "alias"
     word = "word"
     query_template = Template("MATCH (:$alias {name: '$alias'})-[r:$word]-(res) RETURN res")
@@ -53,6 +74,11 @@ def get_alias():
 
 
 def get_tbr():
+    """
+    get all words, that will be removed in message
+    :return: list of words
+    :rtype: list
+    """
     tbr = "tbr"
     tbr_name = "to_be_removed"
     word = "word"
@@ -67,25 +93,48 @@ def get_tbr():
 
 
 class Messages:
+    # percent of recognized words in message
     RECOGNIZED_PERCENT = 2/3
+    # boundary value for recognize one word
     WORD_THRESHOLD = 80
 
     def __init__(self):
+        """
+        get alias and tbr lists
+        """
         self.alias_li = get_alias()
-        self.tbr = get_tbr()
+        self.tbr_li = get_tbr()
 
     def convert(self, text):
+        """
+        convert message text to list of words
+        with the removal of unnecessary words
+        :param text: message text
+        :type text: str
+        :return: list of words
+        :rtype: list
+        """
         text = text.lower()
+        # remove special characters
         text = re.sub(r'[^A-zА-я0-9 ]', '', text)
         message_li = text.split(' ')
 
+        # remove alias and tbr words from message
         for word in self.alias_li:
             message_li = list(filter(word.__ne__, message_li))
-        for word in self.tbr:
+        for word in self.tbr_li:
             message_li = list(filter(word.__ne__, message_li))
         return message_li
 
     def recognize(self, text):
+        """
+        recognize commands from list of words
+        by keys words
+        :param text: text
+        :type text: str
+        :return: name of command
+        :rtype: str
+        """
         words_li = self.convert(text)
 
         if len(words_li) == 0:
