@@ -3,13 +3,12 @@ import commands
 
 
 class Assistant:
-    FILES_PATH = "commands_packages/"
 
-    def __init__(self, session_id="default", sex="female", language="RU"):
+    def __init__(self, session_id="default", sex="female"):
         self.session_id = session_id
         self.sex = sex
 
-        self.message = Messages(package_path=self.FILES_PATH + language + ".json")
+        self.message = Messages()
 
     def response(self, text):
         cmd = self.message.recognize(text)
