@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assistant</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo/favicon.ico') }}" type="image/x-icon">
+    <link href="{{ url_for('static', filename='admin-styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>DASHBOARD</h1>
+    </header>
+    <div class="container">
+        <div class="nav-container">
+        </div>
+        <div class="main-container">
+            <div class="top-container">
+                <div class="add-container">
+                    <div class="label-container">
+                        <img class="" src="../static/img/icons/dash_board/create.png" alt="">
+                        <h1>Create command</h1>
+                    </div>
+                    <div class="add-content" id="add-content">
+                        <h3>Add new command to database</h3>
+                        <h1>Add command</h1>
+                        <div class="input-box">
+                            <h2>Name of a command</h2>
+                            <input type="text" placeholder="type name of a command">
+                        </div>
+                        <div class="input-box">
+                            <h2>Key words</h2>
+                            <input type="text" placeholder="type keywords, separated by commas">
+                        </div>
+                        <div class="input-box">
+                            <h2>Answers</h2>
+                            <input type="text" placeholder="type answers, separated by commas">
+                        </div>
+                        <button id='add-content-btn' onclick="add_command()">Done</button>
+                    </div>
+                </div>
+                <div class="edit-container">
+                    <div class="label-container">
+                        <img class="" src="../static/img/icons/dash_board/edit.png" alt="">
+                        <h1>Edit command</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-container">
+                <div class="remove-container">
+                    <div class="label-container">
+                        <img class="" src="../static/img/icons/dash_board/trash.png" alt="">
+                        <h1>Remove command</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='admin-animations.js') }}"></script>
+</body>
+
+</html>

@@ -30,6 +30,12 @@ if __name__ == '__main__':
         # displays the index page
         return render_template("index.html")
 
+
+    @app.route('/admin')
+    def admin():
+        # displays the index page
+        return render_template("admin.html")
+
     @app.route('/getMessage', methods=['GET'])
     def get_message():
         message = request.args.get("message")
