@@ -1,23 +1,11 @@
-from dotenv import load_dotenv
 from string import Template
 from fuzzywuzzy import fuzz
 from copy import deepcopy
-from py2neo import Graph
 import re
-import os
 
-# load and setting up dot env values
-load_dotenv()
-DB_LINK = os.getenv("DB_LINK")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-
-# connect to Neo4j DB
-graph = Graph(DB_LINK, password=DB_PASSWORD)
 
 # TODO: abstract method of cypher commands
-
-
-def get_key_words(cmd):
+def get_key_words(cmd, graph):
     """
     get key words of commands
     :param cmd: command, which key words you need to get
@@ -39,7 +27,7 @@ def get_key_words(cmd):
     return words_li
 
 
-def get_commands():
+def get_commands(graph):
     """
     get all commands of bot
     :return: list of commands
@@ -56,7 +44,7 @@ def get_commands():
     return commands_li
 
 
-def get_alias():
+def get_alias(graph):
     """
     get all alias of bot
     :return: list of alias
@@ -73,7 +61,7 @@ def get_alias():
     return alias_li
 
 
-def get_tbr():
+def get_tbr(graph):
     """
     get all words, that will be removed in message
     :return: list of words
@@ -98,12 +86,13 @@ class Messages:
     # boundary value for recognize one word
     WORD_THRESHOLD = 80
 
-    def __init__(self):
+    def __init__(self, graph):
         """
         get alias and tbr lists
         """
-        self.alias_li = get_alias()
-        self.tbr_li = get_tbr()
+        self.graph = graph
+        self.alias_li = get_alias(self.graph)
+        self.tbr_li = get_tbr(self.graph)
 
     def convert(self, text):
         """
@@ -142,10 +131,10 @@ class Messages:
             return rc['cmd']
 
         rc = {'cmd': '', "recognized_words": 0}
-        commands_li = get_commands()
+        commands_li = get_commands(self.graph)
         for command in commands_li:
             rc_tmp = {"cmd": command, "recognized_words": 0}
-            key_words = get_key_words(command)
+            key_words = get_key_words(command, self.graph)
             for key_word in key_words:
                 for word in words_li:
                     vrt = fuzz.ratio(word, key_word)

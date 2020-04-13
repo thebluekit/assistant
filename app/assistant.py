@@ -4,7 +4,7 @@ import commands
 
 class Assistant:
     # TODO: generation of session_id
-    def __init__(self, session_id="default", gender="female"):
+    def __init__(self,  db_graph, session_id="default", gender="female"):
         """
             constructor of assistant class
             :param session_id: id of session
@@ -16,7 +16,7 @@ class Assistant:
         self.gender = gender
 
         # initialization of message
-        self.message = Messages()
+        self.message = Messages(db_graph)
 
     def response(self, text):
         """
