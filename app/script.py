@@ -4,7 +4,7 @@ import os
 
 from assistant import Assistant
 from db_controller import DBController
-from admin import Admin
+from dashboard import Dashboard
 
 if __name__ == '__main__':
     # load and setting up dot env values
@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     db_controller = DBController(DB_LINK, DB_PASSWORD)
     bot = Assistant(db_controller.graph)
-    admin = Admin()
+    dashboard = Dashboard(db_controller.graph)
 
     app = Flask(__name__)
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
         key_words = request.args.get("kw")
         answers = request.args.get("answers")
 
-        admin.add_command(command_name, key_words, answers)
+        dashboard.add_command(command_name, key_words, answers)
 
         return "OK"
 

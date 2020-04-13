@@ -10,6 +10,8 @@ def get_key_words(cmd, graph):
     get key words of commands
     :param cmd: command, which key words you need to get
     :type cmd: str
+    :param graph: graph from db
+    :type graph: py2neo.database.Graph
     :return: list of key words
     :rtype: list
     """
@@ -30,6 +32,8 @@ def get_key_words(cmd, graph):
 def get_commands(graph):
     """
     get all commands of bot
+    :param graph: graph from db
+    :type graph: py2neo.database.Graph
     :return: list of commands
     :rtype: list
     """
@@ -47,6 +51,8 @@ def get_commands(graph):
 def get_alias(graph):
     """
     get all alias of bot
+    :param graph: graph from db
+    :type graph: py2neo.database.Graph
     :return: list of alias
     :rtype: list
     """
@@ -64,6 +70,8 @@ def get_alias(graph):
 def get_tbr(graph):
     """
     get all words, that will be removed in message
+    :param graph: graph from db
+    :type graph: py2neo.database.Graph
     :return: list of words
     :rtype: list
     """
@@ -88,7 +96,9 @@ class Messages:
 
     def __init__(self, graph):
         """
-        get alias and tbr lists
+        init graph, get alias and tbr lists
+        :param graph: graph from db
+        :type graph: py2neo.database.Graph
         """
         self.graph = graph
         self.alias_li = get_alias(self.graph)
