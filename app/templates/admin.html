@@ -22,12 +22,12 @@
                         <img class="" src="../static/img/icons/dash_board/create.png" alt="">
                         <h1>Create command</h1>
                     </div>
-                    <div class="add-content" id="add-content">
+                    <div class="popup-content" id="add-content">
                         <h3>Add new command to database</h3>
                         <h1>Add command</h1>
                         <div class="input-box">
                             <h2>Name of a command</h2>
-                            <input type="text" placeholder="type name of a command" id="name">
+                            <input type="text" placeholder="type name of a command" id="add-command-name">
                         </div>
                         <div class="input-box">
                             <h2>Key words</h2>
@@ -52,6 +52,17 @@
                     <div class="label-container">
                         <img class="" src="../static/img/icons/dash_board/trash.png" alt="">
                         <h1>Remove command</h1>
+                    </div>
+                    <div class="popup-content" id="delete-content">
+                        <h3>Remove command from database</h3>
+                        <h1>Remove command</h1>
+                        <div class="input-box">
+                            <h2>Name of a command</h2>
+                            <div class="horizontal-content">
+                                <input type="text" placeholder="type name of a command" id="delete-command-name">
+                                <button id='delete-content-btn' onclick="delete_command()">Done</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

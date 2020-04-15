@@ -31,6 +31,19 @@ class Dashboard:
                                                  word=word, key_word=element)
             self.graph.run(query)
 
+    def delete_command(self, command_name):
+        command = "Command"
+        word = "word"
+
+        delete_command = Template("MATCH(a: $command{name: '$command_name'})"
+                                  "OPTIONAL MATCH() - [rx] - (a)"
+                                  "OPTIONAL MATCH(a) - [r: $word]->(m)"
+                                  "OPTIONAL MATCH(m) - [ry] - ()"
+                                  "DELETE rx, ry, r, a, m;")
+
+        query = delete_command.substitute(command=command, command_name=command_name, word=word)
+        self.graph.run(query)
+
     @staticmethod
     def convert_by_commas(text):
         text_li = text.split(',')

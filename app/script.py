@@ -52,6 +52,14 @@ if __name__ == '__main__':
 
         return "OK"
 
+    @app.route('/deleteCommand', methods=['GET'])
+    def delete_command():
+        command_name = request.args.get("cname")
+
+        dashboard.delete_command(command_name)
+
+        return "OK"
+
     @app.route('/getMessage', methods=['GET'])
     def get_message():
         message = request.args.get("message")
