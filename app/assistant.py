@@ -27,12 +27,12 @@ class Assistant:
             :rtype: str
 
         """
-        cmd = self.message.recognize(text)
-        answer = self.execute_cmd(cmd)
+        cmd, answer_template = self.message.recognize(text)
+        answer = self.execute_cmd(cmd, answer_template)
         return answer
 
     @staticmethod
-    def execute_cmd(cmd):
+    def execute_cmd(cmd, answer_template):
         """
             execute cmd from commands module
             :param cmd: name of method
@@ -41,5 +41,5 @@ class Assistant:
             :rtype: str
 
         """
-        executed_message = getattr(commands, cmd)()
+        executed_message = getattr(commands, cmd)(answer_template)
         return executed_message

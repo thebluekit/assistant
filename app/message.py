@@ -2,6 +2,7 @@ from string import Template
 from fuzzywuzzy import fuzz
 from copy import deepcopy
 import re
+import random
 
 
 # TODO: abstract method of cypher commands
@@ -27,6 +28,30 @@ def get_key_words(cmd, graph):
         words_li.append(element["res"]["name"])
 
     return words_li
+
+
+def get_answers(cmd, graph):
+    """
+    get key words of commands
+    :param cmd: command, which key words you need to get
+    :type cmd: str
+    :param graph: graph from db
+    :type graph: py2neo.database.Graph
+    :return: list of key words
+    :rtype: list
+    """
+    command = "Command"
+    answer = "answer"
+    query_template = Template("MATCH (:$command {name: '$cmd'})-[r:answer]-(res) RETURN res")
+    query = query_template.substitute(cmd=cmd, command=command, answer=answer)
+
+    query_result = graph.run(query).data()
+
+    answers_li = []
+    for element in query_result:
+        answers_li.append(element["res"]["name"])
+
+    return random.choice(answers_li)
 
 
 def get_commands(graph):
@@ -137,7 +162,7 @@ class Messages:
         words_li = self.convert(text)
 
         if len(words_li) == 0:
-            rc = {'cmd': 'Error', "recognized_words": 0}
+            rc = {'cmd': 'error', "recognized_words": 0}
             return rc['cmd']
 
         rc = {'cmd': '', "recognized_words": 0}
@@ -155,4 +180,4 @@ class Messages:
 
         if rc["recognized_words"] / len(words_li) < self.RECOGNIZED_PERCENT:
             rc = {'cmd': 'error', "recognized_words": 0}
-        return rc['cmd']
+        return rc['cmd'], get_answers(rc["cmd"], self.graph)
