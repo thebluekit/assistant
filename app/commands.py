@@ -23,7 +23,10 @@ class Commands:
     @staticmethod
     def time():
         now = datetime.datetime.now()
-        message = str(now.hour) + ":" + str(now.minute)
+        if len(str(now.minute)) == 1:
+            message = str(now.hour) + ":0" + str(now.minute)
+        else:
+            message = str(now.hour) + ":" + str(now.minute)
         return [message]
 
     @staticmethod
