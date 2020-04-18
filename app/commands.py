@@ -1,27 +1,45 @@
 from pycbrf.toolbox import ExchangeRates
 import datetime
-from string import Template
-
-ERROR = "Команда не распознана"
 
 
-def error(answer_template):
-    return ERROR
+class CommandController:
+    def __init__(self):
+        self.all_commands = Commands()
+
+    def execute_cmd(self, command_name, answer_template):
+        args_li = self.__get_args(command_name)
+        answer = self.__set_args(answer_template, args_li)
+        return answer
+
+    def __get_args(self, command_name):
+        return getattr(self.all_commands, command_name)()
+
+    @staticmethod
+    def __set_args(answer_template, args_li):
+        return answer_template % tuple(args_li)
 
 
-def time(answer_template):
-    now = datetime.datetime.now()
-    message = str(now.hour) + ":" + str(now.minute)
-    return message
+class Commands:
+    @staticmethod
+    def time():
+        now = datetime.datetime.now()
+        message = str(now.hour) + ":" + str(now.minute)
+        return [message]
 
+    @staticmethod
+    def dollar_rate():
+        now = datetime.datetime.now()
+        rates = ExchangeRates(str(now.date()))
+        message = str(round(float(rates['USD'].value), 2))
+        return [message]
 
-def dollar_rate(answer_template):
-    now = datetime.datetime.now()
-    rates = ExchangeRates(str(now.date()))
-    message = str(round(float(rates['USD'].value), 2))
-    return message
+    @staticmethod
+    def weather():
+        return [0]
 
+    @staticmethod
+    def static_command():
+        return []
 
-def weather(answer_template):
-    answer = answer_template.format(0)
-    return answer
+    def __getattr__(self, item):
+        return self.static_command

@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from dotenv import load_dotenv
 import os
 
-from assistant import Assistant
+from assistant import AssistantController
 from db_controller import DBController
 from dashboard import Dashboard
 
@@ -15,8 +15,10 @@ if __name__ == '__main__':
     DB_PASSWORD = os.getenv("DB_PASSWORD")
 
     db_controller = DBController(DB_LINK, DB_PASSWORD)
-    bot = Assistant(db_controller.graph)
-    dashboard = Dashboard(db_controller.graph)
+    assistant_controller = AssistantController(db_controller)
+
+    # bot = Assistant(db_controller.graph)
+    dashboard = Dashboard(db_controller)
 
     app = Flask(__name__)
 
@@ -63,7 +65,8 @@ if __name__ == '__main__':
     @app.route('/getMessage', methods=['GET'])
     def get_message():
         message = request.args.get("message")
-        bot_message = bot.response(message)
+        bot_message = assistant_controller.assistant.response(message)
+        # bot_message = bot.response(message)
         return bot_message
 
     app.run(debug=True, host=HOST_IP, port=PORT)

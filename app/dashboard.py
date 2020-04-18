@@ -1,48 +1,22 @@
-from string import Template
+from db_controller import DBModifier, DBFinder
 
 
 class Dashboard:
     # TODO: password check
-    def __init__(self, graph, password=""):
+    def __init__(self, db_controller, password=""):
         self.password = password
-        self.graph = graph
+
+        self.modifier = DBModifier(db_controller)
+        # self.finder = DBFinder(graph)
 
     # TODO: answers
     def add_command(self, command_name, key_words, answers):
         key_words_li = self.convert_by_commas(key_words)
         answers_li = self.convert_by_commas(answers)
-
-        command = "Command"
-        word = "word"
-
-        create_command = Template("CREATE (n: $command {name: '$command_name'}) RETURN n")
-        create_key_word = Template("CREATE (n: $word {name: '$key_word'}) RETURN n")
-        command_key_match = Template("MATCH (a:$command {name:'$command_name'}),"
-                                     "(b:$word {name:'$key_word'}) MERGE (a)-[r:$word]->(b)")
-
-        query = create_command.substitute(command=command, command_name=command_name)
-        self.graph.run(query)
-
-        for element in key_words_li:
-            query = create_key_word.substitute(word=word, key_word=element)
-            self.graph.run(query)
-
-            query = command_key_match.substitute(command=command, command_name=command_name,
-                                                 word=word, key_word=element)
-            self.graph.run(query)
+        self.modifier.add_command(command_name, key_words_li, answers_li)
 
     def delete_command(self, command_name):
-        command = "Command"
-        word = "word"
-
-        delete_command = Template("MATCH(a: $command{name: '$command_name'})"
-                                  "OPTIONAL MATCH() - [rx] - (a)"
-                                  "OPTIONAL MATCH(a) - [r: $word]->(m)"
-                                  "OPTIONAL MATCH(m) - [ry] - ()"
-                                  "DELETE rx, ry, r, a, m;")
-
-        query = delete_command.substitute(command=command, command_name=command_name, word=word)
-        self.graph.run(query)
+        self.modifier.delete_command(command_name)
 
     @staticmethod
     def convert_by_commas(text):
